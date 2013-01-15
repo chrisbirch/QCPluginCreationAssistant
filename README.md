@@ -103,7 +103,7 @@ Here is an example PList file and the generated output created by running the co
 Input: 
 --------
 
-See <a href="QCPluginCreationAssistant/QCPluginCreationHelper/ExamplePorts.plist">An Example Plist file</a>
+See <a href="QCPluginCreationAssistant/tree/master/QCPluginCreationHelper/ExamplePorts.plist">An Example Plist file</a>
 
 Output:
 --------
