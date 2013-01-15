@@ -17,10 +17,13 @@ Once generated its up to the developer to copy and paste the code into appropria
 
 Usage:
 
-QCPluginCreationHelper <InputPList> <OutputTextFile>
+<pre>
+QCPluginCreationHelper InputPList OutputTextFile
+</pre>
 
 The input PList should be created with the following structure:
 
+<pre>
 <array>
 	<dict>
 		<key>Name</key>
@@ -44,7 +47,7 @@ The input PList should be created with the following structure:
 	<dict />
 	<dict />
 </array>
-
+</pre>
 
 For each input or output port you wish to create, copy the Dict structure from above into your plist.
 
