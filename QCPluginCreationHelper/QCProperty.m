@@ -132,7 +132,7 @@
         NSString* valueChangedBody = nil;
         
         //have we been given the exact body to insert or should we generate it?
-        if (_valueChangedBody)
+        if (_valueChangedBody && ![_valueChangedBody isEqualToString:@""])
         {
             valueChangedBody = [[NSString alloc] initWithFormat:@"#warning This code could be out of date as it was read in from Ports PList\n%@",self.valueChangedBody];
         }

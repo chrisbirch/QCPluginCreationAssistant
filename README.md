@@ -109,7 +109,6 @@ Output:
 --------
 
 <pre>
-
 #######################################################################
 #
 # Auto generated code created using QC Plugin Assistant by Chris Birch
@@ -178,8 +177,7 @@ else if([key isEqualToString:OUTPUT_PORTC])
 //An example Input port using ValueChangedTarget
 if ([self didValueForInputKeyChange:INPUT_PORTA])
 {
-#warning This code could be out of date as it was read in from Ports PList
-
+    myInstance.myProperty = self.inputPortA;
 }
 //An example Input port using ValueChangedBody
 if ([self didValueForInputKeyChange:INPUT_PORTB])
@@ -187,6 +185,7 @@ if ([self didValueForInputKeyChange:INPUT_PORTB])
 #warning This code could be out of date as it was read in from Ports PList
 myInstance.myProperty = inputPortB; foo();
 }
+
 
 </pre>
 
