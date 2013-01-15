@@ -8,7 +8,7 @@ Command line app to automatically generate port code for Quartz Composer plugins
 
 Given a PList file, will generate repetitive port code for QC plugins.
 
-See ExamplePorts.plist for information on how to structure the input property list.
+See <a href="QCPluginCreationAssistant/tree/master/QCPluginCreationHelper/ExamplePorts.plist">ExamplePorts.plist</a> for information on how to structure the input property list.
 
 
 The generated code is outputted to the console and also to the specified text file.
@@ -107,12 +107,12 @@ Example.
 
 Here is an example PList file and the generated output created by running the console app.
 
-Input: 
+Input 
 --------
 
 See <a href="QCPluginCreationAssistant/tree/master/QCPluginCreationHelper/ExamplePorts.plist">An Example Plist file</a>
 
-Output:
+Output
 --------
 
 <pre>
