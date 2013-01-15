@@ -39,25 +39,6 @@
 		<string></string>
 	</dict>
 	<dict>
-		<key>NAME</key>
-		<dict>
-			<key>Name</key>
-			<string>PortA</string>
-			<key>FriendlyName</key>
-			<string>Port A</string>
-			<key>Type</key>
-			<string>bool</string>
-			<key>DefaultValue</key>
-			<string>YES</string>
-			<key>Comment</key>
-			<string>An example Input port using ValueChangedTarget</string>
-			<key>IsInput</key>
-			<true/>
-			<key>ValueChangedTarget</key>
-			<string>myInstance.myProperty</string>
-			<key>ValueChangedBody</key>
-			<string></string>
-		</dict>
 		<key>Name</key>
 		<string>PortB</string>
 		<key>FriendlyName</key>

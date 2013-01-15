@@ -51,32 +51,56 @@ For each input or output port you wish to create, copy the Dict structure from a
 Explanation of the properties:
 
 Both import and output ports:
+------------------------------
 
-- Name is the name of the ObjectiveC property
+<dl>
+<dt>Name</dt>
+<dd>The name of the ObjectiveC property</dd>
 
-- FriendlyName is the name of the port as it will appear in Quartz Composer. This param is optional, if not supplied the Name is used instead.
 
-- Type can be one of the following: int, double, string, bool
+<dt>FriendlyName </dt>
+<dd>the name of the port as it will appear in Quartz Composer. This param is optional, if not supplied the Name is used instead.</dd>
 
-- Comment is a brief comment about what the port is (this will be outputted in the generated code). This param is optional.
+<dt>Type</dt>
+<dd>can be one of the following: int, double, string, bool</dd>
 
-- IsInput is a bool value that dictates whether or not this port is an input(true) or an output(false).
+<dt>Comment</dt>
+<dd>a brief comment about what the port is (this will be outputted in the generated code). This param is optional.</dd>
+
+
+<dt>IsInput</dt>
+<dd> a bool value that dictates whether or not this port is an input(true) or an output(false).</dd>
+
+
+</dl>
 
 
 Input ports Only:
+-----------------
 
-- DefaultValue is the default value used by input ports. This param is optional.
+<dl>
 
--ValueChangedTarget describes a property or field that should be set when the input port value changes. This param is optional.
+<dt>DefaultValue</dt>
+<dd>The default value used by input ports. This param is optional.</dd>
 
--ValueChangedBody (overrides ValueChangedTarget). Describes a snippet of code that will be run when the value of an input port changes. This param is optional. NB: A #warning  directive will be created for each port that specifies this property. This is warn that potentially old code is being pasted into the project.
+<dt>ValueChangedTarget</dt>
+<dd>describes a property or field that should be set when the input port value changes. This param is optional</dd>
 
+<dt>ValueChangedBody</dt>
+<dd>(overrides ValueChangedTarget). Describes a snippet of code that will be run when the value of an input port changes. This param is optional. NB: A #warning  directive will be created for each port that specifies this property. This is warn that potentially old code is being pasted into the project</dd>
+
+</dl>
 
 
 Example.
+---------
+
+Here is an example PList file and the generated output created by running the console app.
 
 Input: 
+--------
 
+<pre>
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -149,10 +173,12 @@ Input:
 </array>
 </plist>
 
+</pre>
 
 
 Output:
 
+<pre>
 
 #######################################################################
 #
@@ -232,5 +258,5 @@ if ([self didValueForInputKeyChange:INPUT_PORTB])
 myInstance.myProperty = inputPortB; foo();
 }
 
-
+</pre>
 
