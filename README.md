@@ -17,9 +17,9 @@ Once generated its up to the developer to copy and paste the code into appropria
 
 Generates code for:
 -------------------
--Objective C properties and @dynamic declarations
--+(NSDictionary *)attributesForPropertyPortWithKey:(NSString *)key
--- (BOOL)execute:(id <QCPlugInContext>)context atTime:(NSTimeInterval)time withArguments:(NSDictionary *)arguments
+*Objective C properties and @dynamic declarations
+*+(NSDictionary *)attributesForPropertyPortWithKey:(NSString *)key
+*- (BOOL)execute:(id <QCPlugInContext>)context atTime:(NSTimeInterval)time withArguments:(NSDictionary *)arguments
 
 
 Usage:
