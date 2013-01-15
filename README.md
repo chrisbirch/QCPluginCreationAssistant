@@ -24,29 +24,29 @@ QCPluginCreationHelper InputPList OutputTextFile
 The input PList should be created with the following structure:
 
 <pre>
-<array>
-	<dict>
-		<key>Name</key>
-		<string></string>
-		<key>FriendlyName</key>
-		<string></string>
-		<key>Type</key>
-		<string></string>
-		<key>DefaultValue</key>
-		<string></string>
-		<key>Comment</key>
-		<string></string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string></string>
-		<key>ValueChangedBody</key>
-		<string></string>
-	</dict>
-	<dict />
-	<dict />
-	<dict />
-</array>
+&lt;array&gt;
+	&lt;dict&gt;
+		&lt;key&gt;Name&lt;/key&gt;
+		&lt;string&gt;&lt;/string&gt;
+		&lt;key&gt;FriendlyName&lt;/key&gt;
+		&lt;string&gt;&lt;/string&gt;
+		&lt;key&gt;Type&lt;/key&gt;
+		&lt;string&gt;&lt;/string&gt;
+		&lt;key&gt;DefaultValue&lt;/key&gt;
+		&lt;string&gt;&lt;/string&gt;
+		&lt;key&gt;Comment&lt;/key&gt;
+		&lt;string&gt;&lt;/string&gt;
+		&lt;key&gt;IsInput&lt;/key&gt;
+		&lt;true/&gt;
+		&lt;key&gt;ValueChangedTarget&lt;/key&gt;
+		&lt;string&gt;&lt;/string&gt;
+		&lt;key&gt;ValueChangedBody&lt;/key&gt;
+		&lt;string&gt;&lt;/string&gt;
+	&lt;/dict&gt;
+	&lt;dict /&gt;
+	&lt;dict /&gt;
+	&lt;dict /&gt;
+&lt;/array&gt;
 </pre>
 
 For each input or output port you wish to create, copy the Dict structure from above into your plist.
