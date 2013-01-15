@@ -12,478 +12,78 @@
 		<key>DefaultValue</key>
 		<string></string>
 		<key>Comment</key>
-		<string></string>
+		<string>This dict is ignored as its Name is empty</string>
 		<key>IsInput</key>
 		<true/>
 		<key>ValueChangedTarget</key>
 		<string></string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>Filename</string>
 		<key>ValueChangedBody</key>
-		<string>        musicPlayer.filename = self.inputFilename;
-        
-        //Make sure the file is valid (if its not then its reset to nil)
-        if (musicPlayer.filename)
-        {
-            if (musicPlayer.pitch &gt; 0)
-                [musicPlayer play];
-        }
-        else
-        {
-            [context logMessage:@&quot;Filename isn&apos;t valid: %@&quot;,self.inputFilename];
-        }</string>
-		<key>Type</key>
-		<string>string</string>
-		<key>DefaultValue</key>
 		<string></string>
-		<key>Comment</key>
-		<string>The full path to the audio file</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.filename</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>FileReversed</string>
-		<key>ValueChangedBody</key>
-		<string>        musicPlayer.filenameReversed = self.inputFilenameReversed;
-
-        //Make sure the file is valid (if its not then its reset to nil)
-        if (musicPlayer.filenameReversed)
-        {
-            if (musicPlayer.pitch &lt; 0)
-                [musicPlayer play];
-        }
-        else
-        {
-            [context logMessage:@&quot;Filename isn&apos;t valid: %@&quot;,self.inputFilenameReversed];
-        }</string>
+		<string>PortA</string>
 		<key>FriendlyName</key>
-		<string>File Reversed</string>
-		<key>Type</key>
-		<string>string</string>
-		<key>DefaultValue</key>
-		<string></string>
-		<key>Comment</key>
-		<string>The full path to the reversed audio file</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>Loop</string>
+		<string>Port A</string>
 		<key>Type</key>
 		<string>bool</string>
 		<key>DefaultValue</key>
 		<string>YES</string>
 		<key>Comment</key>
-		<string>Controls whether or not audio is looped</string>
+		<string>An example Input port using ValueChangedTarget</string>
 		<key>IsInput</key>
 		<true/>
 		<key>ValueChangedTarget</key>
-		<string>musicPlayer.loop</string>
+		<string>myInstance.myProperty</string>
+		<key>ValueChangedBody</key>
+		<string></string>
 	</dict>
 	<dict>
+		<key>NAME</key>
+		<dict>
+			<key>Name</key>
+			<string>PortA</string>
+			<key>FriendlyName</key>
+			<string>Port A</string>
+			<key>Type</key>
+			<string>bool</string>
+			<key>DefaultValue</key>
+			<string>YES</string>
+			<key>Comment</key>
+			<string>An example Input port using ValueChangedTarget</string>
+			<key>IsInput</key>
+			<true/>
+			<key>ValueChangedTarget</key>
+			<string>myInstance.myProperty</string>
+			<key>ValueChangedBody</key>
+			<string></string>
+		</dict>
 		<key>Name</key>
-		<string>Mono</string>
+		<string>PortB</string>
+		<key>FriendlyName</key>
+		<string>Port B</string>
 		<key>Type</key>
 		<string>bool</string>
 		<key>DefaultValue</key>
 		<string>YES</string>
 		<key>Comment</key>
-		<string>Controls whether audio file is forced to mono</string>
+		<string>An example Input port using ValueChangedBody</string>
 		<key>IsInput</key>
 		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.mono</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>Reset</string>
 		<key>ValueChangedBody</key>
-		<string>        musicPlayer.offset = (float)self.inputTrackOffset;
-        [musicPlayer play];</string>
-		<key>FriendlyName</key>
-		<string>Reset Signal</string>
-		<key>Type</key>
-		<string>bool</string>
-		<key>DefaultValue</key>
-		<string>NO</string>
-		<key>Comment</key>
-		<string>Causes the player to reset to offset location</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string></string>
+		<string>myInstance.myProperty = inputPortB; foo();</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>ListenerPositionX</string>
+		<string>PortC</string>
 		<key>FriendlyName</key>
-		<string>Listener Position X</string>
+		<string>Port C</string>
 		<key>Type</key>
 		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
 		<key>Comment</key>
-		<string>The X coordinate of the listener</string>
+		<string>An example output port</string>
 		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.listenerPositionX</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ListenerPositionY</string>
-		<key>FriendlyName</key>
-		<string>Listener Position Y</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>The Y coordinate of the listener</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.listenerPositionY</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ListenerPositionZ</string>
-		<key>FriendlyName</key>
-		<string>Listener Position Z</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>The Z coordinate of the listener</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.listenerPositionZ</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>SourcePositionX</string>
-		<key>FriendlyName</key>
-		<string>Source Position X</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>The X coordinate of the audio source</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.sourcePositionX</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>SourcePositionY</string>
-		<key>FriendlyName</key>
-		<string>Source Position Y</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>The Y coordinate of the audio source</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.sourcePositionY</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>SourcePositionZ</string>
-		<key>FriendlyName</key>
-		<string>Source Position Z</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>The Z coordinate of the audio source</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.sourcePositionZ</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>TrackOffset</string>
-		<key>FriendlyName</key>
-		<string>Track Offset</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>The offset within the track</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.offset</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>Pitch</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>1</string>
-		<key>Comment</key>
-		<string>Controls the pitch of the audio</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.pitch</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>Volume</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>1</string>
-		<key>Comment</key>
-		<string>Controls the playback volume</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.volume</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ListenerVelocityX</string>
-		<key>FriendlyName</key>
-		<string>Listener Velocity X</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the X component of Listeners velocity</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.listenerVelocityX</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ListenerVelocityY</string>
-		<key>FriendlyName</key>
-		<string>Listener Velocity Y</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the Y component of Listeners velocity</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.listenerVelocityY</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ListenerVelocityZ</string>
-		<key>FriendlyName</key>
-		<string>Listener Velocity Z</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the Z component of Listeners velocity</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.listenerVelocityZ</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>SourceVelocityX</string>
-		<key>FriendlyName</key>
-		<string>Source Velocity X</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the X component of Source velocity</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.sourceVelocityX</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>SourceVelocityY</string>
-		<key>FriendlyName</key>
-		<string>Source Velocity Y</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the Y component of Source velocity</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.sourceVelocityY</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>SourceVelocityZ</string>
-		<key>FriendlyName</key>
-		<string>Source Velocity Z</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the Z component of Source velocity</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.sourceVelocityZ</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ReverbEQBandwidth</string>
-		<key>FriendlyName</key>
-		<string>Reverb EQ Bandwidth</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the EQ Bandwidth of the Reverb effect</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.reverbEQBandwidth</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ReverbEQFrequency</string>
-		<key>FriendlyName</key>
-		<string>Reverb EQ Frequency</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the EQ Frequency of the Reverb effect</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.reverbEQFrequency</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ReverbEQGain</string>
-		<key>FriendlyName</key>
-		<string>Reverb EQ Gain</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the EQ Gain of the Reverb effect</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.reverbEQGain</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ReverbEnabled</string>
-		<key>FriendlyName</key>
-		<string>Reverb Enabled</string>
-		<key>Type</key>
-		<string>bool</string>
-		<key>DefaultValue</key>
-		<string>NO</string>
-		<key>Comment</key>
-		<string>Controls whether Reverb is enabled</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.reverbEnabled</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ReverbRoomType</string>
-		<key>FriendlyName</key>
-		<string>Reverb Room Type</string>
-		<key>Type</key>
-		<string>uint</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the type of room that the reverb effect uses</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.reverbRoomType</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ReverbSendLevel</string>
-		<key>FriendlyName</key>
-		<string>Reverb Send Level</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>0</string>
-		<key>Comment</key>
-		<string>Controls the reverb send level of the sound source </string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.reverbSendLevel</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>RollOff</string>
-		<key>FriendlyName</key>
-		<string>Roll Off</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>1</string>
-		<key>Comment</key>
-		<string>Controls the roll off factor</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.rollOff</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>ReferenceDistance</string>
-		<key>FriendlyName</key>
-		<string>Reference Distance</string>
-		<key>Type</key>
-		<string>double</string>
-		<key>DefaultValue</key>
-		<string>5</string>
-		<key>Comment</key>
-		<string>Controls the reference distance</string>
-		<key>IsInput</key>
-		<true/>
-		<key>ValueChangedTarget</key>
-		<string>musicPlayer.referenceDistance</string>
+		<false/>
 	</dict>
 </array>
 </plist>
