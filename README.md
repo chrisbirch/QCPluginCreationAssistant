@@ -53,7 +53,7 @@ For each input or output port you wish to create, copy the Dict structure from a
 
 Explanation of the properties:
 
-Both import and output ports:
+Both input and output ports:
 ------------------------------
 
 <dl>
