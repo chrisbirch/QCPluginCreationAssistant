@@ -65,7 +65,12 @@ Both import and output ports:
 <dd>the name of the port as it will appear in Quartz Composer. This param is optional, if not supplied the Name is used instead.</dd>
 
 <dt>Type</dt>
-<dd>can be one of the following: int, double, string, bool</dd>
+<dd>can be one of the following: 
+* int
+* double
+* string
+* bool
+</dd>
 
 <dt>Comment</dt>
 <dd>a brief comment about what the port is (this will be outputted in the generated code). This param is optional.</dd>
