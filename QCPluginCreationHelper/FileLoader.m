@@ -33,6 +33,15 @@
     {
         return PROPERTY_TYPE_STRING;
     }
+    else if ([lowerCase isEqualToString:@"dictionary"])
+    {
+        return PROPERTY_TYPE_DICTIONARY;
+    }
+    else if ([lowerCase isEqualToString:@"array"])
+    {
+        return PROPERTY_TYPE_ARRAY;
+    }
+
 
     [NSException raise:@"Invalid property type" format:@"Type \"%@\" unknown",propertyTypeString];
     return 0;

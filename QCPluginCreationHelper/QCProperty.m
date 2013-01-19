@@ -130,23 +130,35 @@
         NSString *formatString = @"%@\nif ([self didValueForInputKeyChange:%@_%@])\n{\n%@\n}";
         NSString* inputNameUCase = [_name uppercaseString];
         NSString* valueChangedBody = nil;
+     
+        BOOL hasValueChangedTarget =_valueChangedTarget && ![_valueChangedTarget isEqualToString:@""];
+        BOOL hasValueChangedBody = _valueChangedBody && ![_valueChangedBody isEqualToString:@""];
         
-        //have we been given the exact body to insert or should we generate it?
-        if (_valueChangedBody && ![_valueChangedBody isEqualToString:@""])
+        //make sure we have been given values for this otherwise dont bother
+        if (!hasValueChangedBody && !hasValueChangedTarget)
         {
-            valueChangedBody = [[NSString alloc] initWithFormat:@"#warning This code could be out of date as it was read in from Ports PList\n%@",self.valueChangedBody];
+            return [[NSString alloc] initWithFormat:@"//Skipping Value changed section for property: %@ as no values have been supplied for valueChangedTarget or valueChangedBody",_name];
         }
         else
         {
-            NSString *generatedFormatStringValueChangedBody = @"    %@ = self.%@%@;";            
+        
+            //have we been given the exact body to insert or should we generate it?
+            if (hasValueChangedBody)
+            {
+                valueChangedBody = [[NSString alloc] initWithFormat:@"#warning This code could be out of date as it was read in from Ports PList\n%@",self.valueChangedBody];
+            }
+            else//valueChanged target
+            {
+                NSString *generatedFormatStringValueChangedBody = @"    %@ = self.%@%@;";            
 
-            valueChangedBody  =[[NSString alloc] initWithFormat:generatedFormatStringValueChangedBody,_valueChangedTarget, directionPropertyName, self.name];
+                valueChangedBody  =[[NSString alloc] initWithFormat:generatedFormatStringValueChangedBody,_valueChangedTarget, directionPropertyName, self.name];
 
+            }
+
+            NSString* outputString  =[[NSString alloc] initWithFormat:formatString,self.comment,directionDefineName, inputNameUCase,valueChangedBody];
+
+            return outputString;
         }
-
-        NSString* outputString  =[[NSString alloc] initWithFormat:formatString,self.comment,directionDefineName, inputNameUCase,valueChangedBody];
-
-        return outputString;
     }
     else
         return @"";
@@ -187,6 +199,8 @@
                 return [[NSString alloc] initWithFormat:@"@\"%@\"",_defaultValue];
                 
             }
+                default:
+                return @"";
         
         }
     }
@@ -208,6 +222,14 @@
         {
             return @"NSString*";
         }
+        case PROPERTY_TYPE_ARRAY:
+        {
+           return @"NSArray*";
+        }
+        case PROPERTY_TYPE_DICTIONARY:
+        {
+            return @"NSDictionary*";
+        }
             
         default:
             break;
@@ -226,6 +248,8 @@
             return @"assign";
             break;
         }
+        case PROPERTY_TYPE_ARRAY:
+        case PROPERTY_TYPE_DICTIONARY:
         case PROPERTY_TYPE_STRING:
         {
             return @"copy";
