@@ -252,7 +252,7 @@
         case PROPERTY_TYPE_DICTIONARY:
         case PROPERTY_TYPE_STRING:
         {
-            return @"copy";
+            return @"assign";
             break;
         }
             
