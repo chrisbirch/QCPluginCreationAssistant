@@ -230,6 +230,19 @@
         {
             return @"NSDictionary*";
         }
+        case PROPERTY_TYPE_IMAGEPROVIDER:
+        {
+            return @"id<QCPlugInInputImageProvider>";
+        }
+        case PROPERTY_TYPE_IMAGESOURCE:
+        {
+            return @"id<QCPlugInInputImageSource>";
+        }
+        case PROPERTY_TYPE_CGCOLORREF:
+        {
+            return @"CGColorRef";
+        }
+            
             
         default:
             break;
@@ -244,6 +257,9 @@
         case PROPERTY_TYPE_BOOL:
         case PROPERTY_TYPE_UINT:
         case PROPERTY_TYPE_DOUBLE:
+        case PROPERTY_TYPE_CGCOLORREF:
+        case PROPERTY_TYPE_IMAGESOURCE:
+        case PROPERTY_TYPE_IMAGEPROVIDER:
         {
             return @"assign";
             break;
